@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giray Kaçar</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body{
+font-family:Arial,sans-serif;
+color:white;
+text-align:center;
+min-height:100vh;
+background:linear-gradient(135deg,#7a0014,#001f5b);
+overflow-x:hidden;
+}
+
+#intro{
+position:fixed; inset:0;
+background:linear-gradient(135deg,#7a0014,#001f5b);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:999;
+animation:fadeOut 2.5s ease forwards;
+animation-delay:2s;
+}
+
+#intro h1{font-size:30px;letter-spacing:3px;}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+.bg-logo{
+position:fixed;
+top:50%; left:50%;
+width:340px;
+opacity:0.07;
+transform:translate(-50%,-50%);
+animation:spin 25s linear infinite;
+z-index:-1;
+}
+
+@keyframes spin{
+from{transform:translate(-50%,-50%) rotate(0deg);}
+to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+.container{padding:50px 20px;animation:fadeIn 1.5s ease-in-out;}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.title{font-size:34px;margin-bottom:10px;letter-spacing:2px;}
+
+.visitor{font-size:14px;margin-bottom:15px;opacity:0.8;}
+
+.live{
+display:inline-block;
+padding:8px 20px;
+background:rgba(255,0,0,0.85);
+border-radius:30px;
+font-weight:bold;
+margin-bottom:25px;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{50%{opacity:0.4;}}
+
+.link{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+margin:14px auto;
+padding:16px;
+width:85%;
+max-width:420px;
+background:rgba(255,255,255,0.06);
+border-radius:16px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+box-shadow:0 0 8px #7a0014,0 0 18px #001f5b;
+}
+
+.link:hover{
+transform:scale(1.08);
+box-shadow:0 0 12px #ff0033,0 0 25px #0033ff;
+}
+
+.icon{width:28px;height:28px;}
+
+@media(max-width:600px){.title{font-size:26px;}}
+</style>
+
+</head>
+
+<body>
+
+<div id="intro">
+<h1>🔥 GİRAY KAÇAR 🔥</h1>
+<p>Yükleniyor...</p>
+</div>
+
+<img src="https://upload.wikimedia.org/wikipedia/tr/thumb/5/5c/Trabzonspor.svg/512px-Trabzonspor.svg.png" class="bg-logo">
+
+<div class="container">
+
+<h1 class="title">Giray Kaçar</h1>
+
+<div class="visitor">👀 Ziyaretçi: <span id="count">0</span></div>
+
+<div class="live">🔴 CANLI YAYINDA</div>
+
+<a class="link" href="https://kick.com/remzigiraykacar">
+CANLI YAYIN (KICK)
+</a>
+
+<a class="link" href="https://www.instagram.com/giraykacarr">
+RESMİ INSTAGRAM
+</a>
+
+<a class="link" href="https://youtube.com/@remzigiraykacar23">
+YOUTUBE KANAL
+</a>
+
+<a class="link" href="https://www.instagram.com/channel/AbbrjxNCkqs-cvzb/">
+INSTAGRAM TOPLULUK
+</a>
+
+<a class="link" href="https://www.instagram.com/1bordo1mavii">
+1 BORDO 1 MAVİ
+</a>
+
+</div>
+
+<script>
+let count = localStorage.getItem("visitCount");
+if(!count){count=1;} else {count=parseInt(count)+1;}
+localStorage.setItem("visitCount",count);
+document.getElementById("count").innerText=count;
+</script>
+
+</body>
+</html>
